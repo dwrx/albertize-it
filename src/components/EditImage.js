@@ -25,14 +25,15 @@ function EditImage() {
         link.click();
       })
       .catch(error => {
-        alert('oops, something went wrong!', error);
+        alert('oops, something went wrong!');
+        console.error(error);
       });
   };
 
   return (
     <Container maxWidth="sm">
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', justifyContent: 'center', bgcolor: 'white', color: 'dark' }}>
-        <Typography variant="h5" gutterBottom>You can move the mustache by clicking & dragging with your cursor. You can resize the mustache, follow the pointer tips when you hover the borders.</Typography>
+        <Typography variant="h5" gutterBottom>You can move the mustache by clicking and dragging with your cursor. Give it a few tries, as it might not always work smoothly. You can also resize the mustache - just follow the pointer tips when you hover over the borders.</Typography>
         <Box ref={imageContainerRef} sx={{ position: 'relative', width: '800px', height: 'auto', mt: 2, mb: 2 }}>
           <img src={location.state?.image} alt="User-selected" style={{ width: '100%', height: 'auto' }} />
           <Rnd
